@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Гончаров М.О. Практична робота Функції</title>
+</head>
+<body>
+<script>
+    // Функцій до задач
+    function degree(x, n) {
+        let deg = x ** n
+        return `Завдання 1\n${x} в степені ${n} = ${deg}`;
+    }
+
+    function factorial(n) {
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return `Завдання 2\nФакторіал числа ${n} = ${result}`;
+    }
+
+
+    function solve_quadratic(a, b, c) {
+        let D = b * b - 4 * a * c;
+
+        if (D < 0) {
+            return "Завдання 3\nНемає дійсних коренів";
+        } else if (D === 0) {
+            let x = -b / (2 * a);
+            return `Завдання 3\nОдин корінь: x = ${x}`;
+        } else {
+            let x1 = (-b + Math.sqrt(D)) / (2 * a);
+            let x2 = (-b - Math.sqrt(D)) / (2 * a);
+            return `Завдання 3\nДва корені: x1 = ${x1}, x2 = ${x2}`;
+        }
+    }
+
+    // Завдання 1
+    let x = +prompt("Завдання 1\nВведіть число x:");
+    let n = +prompt("Завдання 1\nВведіть степінь n (≥1):");
+
+    alert(degree(x, n))
+
+    // Завдання 2
+    let num = +prompt("Завдання 2\nВведіть число n:");
+    alert(factorial(num))
+
+    // Завдання 3
+    let a = +prompt("Завдання 3\nВведіть a:");
+    let b = +prompt("Завдання 3\nВведіть b:");
+    let c = +prompt("Завдання 3\nВведіть c:");
+
+    alert(solve_quadratic(a, b, c));
+</script>
+</body>
+</html>
