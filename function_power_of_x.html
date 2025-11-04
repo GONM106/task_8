@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Розрахунок степені Завдання 1</title>
+</head>
+<style type="text/css">
+    body {
+        background-color: #4e4e4e;
+        color: #cccccc;
+        font-size: 30px;
+    }
+</style>
+<body>
+<a class="button-link" href="index.html">Повернутися до початку</a>
+<script>
+  function power_of_x() {
+    let x = document.pofx.x.value;
+    let n = document.pofx.n.value;
+    let s=1;
+    let p_of_x = document.getElementById("p_of_x");
+
+    for (i=1; i<=n; i++) {
+      s=s*x;
+    }
+    string= x+ " у степені " + n + " = " + s;
+    p_of_x.innerHTML = string;
+  }
+</script>
+<div>
+  <p>Розрахунок x в степені n</p>
+  <form name="pofx" action="javascript:power_of_x()">
+    x <input class="cqe" name="x" type="text" value="2" size="4">
+    n <input class="cqe" name="n" type="number" value="1" size="4">
+    <input class="btn" type="submit" value="Розрахувати">
+    <input class="btn" type="reset" name="reset" value="Скинути">
+  </form>
+  <span id="p_of_x">Введіть x та n</span>
+</div>
+</body>
+</html>

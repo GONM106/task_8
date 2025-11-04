@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Розрахунок квадратного рівняння Завдання 3</title>
+</head>
+<style type="text/css">
+  body {
+    background-color: #4e4e4e;
+    color: #cccccc;
+    font-size: 30px;
+  }
+</style>
+<body>
+<a class="button-link" href="index.html">Повернутися до початку</a>
+<script>
+function quadratic_equation() {
+let a = document.qef.a.value;
+let b = document.qef.b.value;
+let c = document.qef.c.value;
+let sol = document.getElementById("qe_sol");
+
+let D, x1, x2;
+D = b**2 - 4*a*c;
+x1 = ( -b + Math.sqrt(D) ) / (2*a);
+x2 = ( -b - Math.sqrt(D) ) / (2*a);
+if ( D > 0 ) {
+string=`Два корені: x1 = ${x1}, x2 = ${x2}`;
+}
+else if ( D == 0 ) {
+string=`Один корінь: x = ${x}`;
+}
+else {
+string= `Немає дійсних коренів`;
+}
+sol.innerHTML = string;
+}
+</script>
+<div>
+  <p>Розв'язок квадратного рівняння a&middot;x&sup2; + b&middot;x + c = 0.</p>
+  <form name="qef" action="javascript:quadratic_equation()">
+    a <input class="cqe" name="a" type="number" value="1" size="4">
+    b <input class="cqe" name="b" type="text" value="2" size="4">
+    c <input class="cqe" name="c" type="text" value="-3" size="4">
+    <input class="btn" type="submit" value="Розрахувати">
+    <input class="btn" type="reset" name="reset" value="Скинути">
+  </form>
+  <span id="qe_sol">Введить коефіцієнти</span>
+</div>
+</body>
+</html>
